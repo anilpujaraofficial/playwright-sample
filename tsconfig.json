@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "lib": ["es5", "dom"],
+      "baseUrl": "./",
+      "paths": {
+        "@utils/*": ["utils/*"],         
+        "@pageObject/*": ["pageObject/*"],   
+        "@support/*": ["support/*"] ,
+        "@pages/*": ["pages/*"] ,
+       
+      },
+     
+      // "strict": true,
+      "types": ["playwright", "node"]
+    },
+    "include": ["**/*.ts"],
+    
+  }
+  
