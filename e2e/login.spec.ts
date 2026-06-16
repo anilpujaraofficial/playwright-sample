@@ -1,13 +1,13 @@
 import { test, expect } from "@playwright/test";
 import { getClientEnv } from "../test.env";
-import LoginPageObj from "../page-object/login-page-obt";
+import LoginPage from "../pages/login-page";
 
-let loginPage: LoginPageObj;
+let loginPage: LoginPage;
 
-test.describe("Login Module", async () => {
+test.describe("Login Module", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(getClientEnv("url"));
-    loginPage = new LoginPageObj(page);
+    loginPage = new LoginPage(page);
   });
 
   test("should login successfully", async () => {

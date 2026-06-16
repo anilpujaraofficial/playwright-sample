@@ -1,9 +1,9 @@
 const env = {
   dev: {
-    url: "https://www.saucedemo.com/",
-    apiUrl: null,
-    username: "standard_user",
-    password: "secret_sauce",
+    url: "https://dev.midashealthservices.com.np",
+    apiUrl: "https://um.dev.midashealthservices.com.np/api/v1",
+    username: "superadmin",
+    password: "Mid@s!23##",
   },
 };
 

@@ -1,7 +1,7 @@
 import { expect, Page } from "@playwright/test";
 import { getClientEnv } from "../test.env";
 
-import * as xpath from "../page/login-page.json";
+import * as xpath from "../utils/selectors/login-page.json";
 
 export default class LoginPageObj {
   constructor(public page: Page) {}
@@ -15,7 +15,9 @@ export default class LoginPageObj {
       .fill(getClientEnv("password"));
 
     await this.page.locator(xpath.LoginPage.loginButton).click();
-    await expect(this.page.locator(".header_label")).toHaveText("Swag Labs");
+    await expect(
+      this.page.locator(".ant-notification-notice-description"),
+    ).toHaveText("Login Successfully!");
   }
 
   async invalidLogin(username: string, password: string) {
@@ -24,8 +26,8 @@ export default class LoginPageObj {
 
     await this.page.locator(xpath.LoginPage.loginButton).click();
 
-    await expect(this.page.locator(xpath.LoginPage.errorMessage)).toHaveText(
-      "Epic sadface: Username and password do not match any user in this service",
-    );
+    await expect(
+      this.page.locator(".ant-notification-notice-description"),
+    ).toHaveText("Invalid username or password");
   }
 }
