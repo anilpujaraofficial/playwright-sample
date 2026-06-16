@@ -10,3 +10,4 @@ package-lock.json
 /videos/
 .vscode/
 jsonReports/
+test.env.ts
